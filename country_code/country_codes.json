@@ -1,0 +1,97 @@
+[
+    {
+        "country": "Afghanistan",
+        "code": "AF",
+        "dial_code": "+93"
+    },
+    {
+        "country": "Albania",
+        "code": "AL",
+        "dial_code": "+355"
+    },
+    {
+        "country": "Algeria",
+        "code": "DZ",
+        "dial_code": "+213"
+    },
+    {
+        "country": "India",
+        "code": "IN",
+        "dial_code": "+91"
+    },
+    {
+        "country": "United States",
+        "code": "US",
+        "dial_code": "+1"
+    },
+    {
+        "country": "United Kingdom",
+        "code": "GB",
+        "dial_code": "+44"
+    },
+    {
+        "country": "Canada",
+        "code": "CA",
+        "dial_code": "+1"
+    },
+    {
+        "country": "Germany",
+        "code": "DE",
+        "dial_code": "+49"
+    },
+    {
+        "country": "France",
+        "code": "FR",
+        "dial_code": "+33"
+    },
+    {
+        "country": "Australia",
+        "code": "AU",
+        "dial_code": "+61"
+    },
+    {
+        "country": "Japan",
+        "code": "JP",
+        "dial_code": "+81"
+    },
+    {
+        "country": "South Korea",
+        "code": "KR",
+        "dial_code": "+82"
+    },
+    {
+        "country": "Brazil",
+        "code": "BR",
+        "dial_code": "+55"
+    },
+    {
+        "country": "Russia",
+        "code": "RU",
+        "dial_code": "+7"
+    },
+    {
+        "country": "China",
+        "code": "CN",
+        "dial_code": "+86"
+    },
+    {
+        "country": "Mexico",
+        "code": "MX",
+        "dial_code": "+52"
+    },
+    {
+        "country": "South Africa",
+        "code": "ZA",
+        "dial_code": "+27"
+    },
+    {
+        "country": "Oman",
+        "code": "OM",
+        "dial_code": "+968"
+    },
+    {
+        "country": "United Arab Emirates",
+        "code": "AE",
+        "dial_code": "+971"
+    }
+]

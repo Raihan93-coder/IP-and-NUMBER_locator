@@ -4,6 +4,10 @@
 import ip_locator
 import num_locator
 
+import webbrowser
+import math
+import time
+
 import json
 
 #storing the logs in a log file with time and date
@@ -57,6 +61,36 @@ def find_dial_code(ccode):
             return None
 
 
+def map_viewer(x,y):
+    # To see the coordinates in google maps
+    
+    # cheking in which hemisphere the location is
+    if x >= 0:
+        hemi_lat = "N"
+    else:
+        hemi_lat = "S"
+    if y >= 0:
+        hemi_lon = "E"
+    else:
+        hemi_lon = "W"
+
+    # converting the latitude into degree,minute and second form
+    deg_lat = abs(int(x))
+    min_lat = abs((x - int(x)) * 60)  
+    sec_lat = abs((min_lat - int(min_lat)) * 60)
+
+    # converting longitude into degree,minute and second form
+    deg_lon = abs(int(y))
+    min_lon = abs((y - int(y)) * 60)
+    sec_lon = abs((min_lon - int(min_lon)) * 60)
+
+    # redirecting to google maps
+    webbrowser.open(f"""https://www.google.com/maps/place/{str(deg_lat)}°{str(int(min_lat))}'{str(int(sec_lat))}"{hemi_lat}{str(deg_lon)}°{str(int(min_lon))}'{str(int(sec_lon))}"{hemi_lon}""") 
+
+    # waiting for the browser to open and then exiting the program
+    time.sleep(2)
+    exit()
+
 def main():
     print("[1]IP address locator\n[2]Phone number locator\n[3]Exit")
     exit = False# prob used to exit the while loop
@@ -74,6 +108,7 @@ def main():
                 # if the ip-adress is valid
                 print_location(choice,location)
                 logging.info(f"ip_location->{ip} = ({location['latitude']},{location['longitude']})")#saving the log to geo_logs.log file
+                map_viewer(float(location['latitude']),float(location['longitude']))
             else:
                 # if ip-address is not valid (note:not all ip address can be located doesn't mean it is invalid)
                 # here stated invalid just for understanding that you won't get a desired output
@@ -93,11 +128,11 @@ def main():
             if check == "True":
                 # if phone number is valid
                 print_location(choice,location)
-                logging.info(f"number_location->{num}:({location['location']},{location['carrier']})")#saving the log to geo_logs.log file
+                logging.info(f"number_location->{num} = ({location['location']},{location['carrier']})")#saving the log to geo_logs.log file
             else:
                 # if phone number is not valid (note:here invalid states that the phone number doesn't exist)
                 print(check)
-                logging.info(f"number_location->{num}:number doesn't exsist")#saving the log to geo_logs.log file
+                logging.info(f"number_location->{num} = number doesn't exsist")#saving the log to geo_logs.log file
 
         elif choice == 3:
             exit = True# changing the probe value to exit the program
